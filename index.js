@@ -14,6 +14,7 @@ class Device {
     return this.isOn;
   }
   getSerial() {
+    logToTerminal(`Your phone serial is: ${this.#serialNumber}`);
     return this.#serialNumber;
   }
 }
@@ -42,7 +43,7 @@ class SmartPhone extends Device {
 
 // --- Initialization ---
 const livingRoomLight = new SmartLight("Main Light", "Philips", "Warm White");
-const myPhone = new SmartPhone("iPhone 15", "Apple", "256GB");
+const myPhone = new SmartPhone("iPhone 17", "Apple", "256GB");
 
 // --- UI Logic ---
 function logToTerminal(msg) {
@@ -103,4 +104,8 @@ function handlePhoneToggle() {
 
 function handleCamera() {
   myPhone.takePhoto();
+}
+
+function checkSerial() {
+  myPhone.getSerial();
 }
